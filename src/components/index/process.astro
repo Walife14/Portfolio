@@ -1,0 +1,57 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<section class="px-4 md:px-20">
+  <h2 class="text-3xl font-bold text-center mb-10">My Process</h2>
+  <div class="flex flex-col gap-y-8">
+    <div
+      class="flex items-center justify-between gap-x-2 md:justify-center md:gap-x-20"
+    >
+      <div class="flex flex-col items-center">
+        <div class="bg-orange-500 p-6 rounded-full text-white">
+          <Icon name="ion:calendar-outline" size={35} />
+        </div>
+        <span class="font-semibold">Consultation</span>
+      </div>
+      <Icon name="ion:arrow-forward" size={15} />
+      <div class="flex flex-col items-center">
+        <div class="bg-orange-500 p-6 rounded-full text-white">
+          <Icon name="ion:brush-outline" size={35} />
+        </div>
+        <span class="font-semibold">Design</span>
+      </div>
+      <Icon name="ion:arrow-forward" size={15} />
+      <div class="flex flex-col items-center">
+        <div class="bg-green-500 p-3 rounded-full text-white">
+          <Icon name="ion:checkmark" size={20} />
+        </div>
+        <span class="font-semibold">Approval</span>
+      </div>
+    </div>
+    <div
+      class="flex items-center justify-between gap-x-2 md:justify-center md:gap-x-20"
+    >
+      <div class="flex flex-col items-center">
+        <div class="bg-orange-500 p-6 rounded-full text-white">
+          <Icon name="ion:code-slash" size={35} />
+        </div>
+        <span class="font-semibold">Development</span>
+      </div>
+      <Icon name="ion:arrow-forward" size={15} />
+      <div class="flex flex-col items-center">
+        <div class="bg-green-500 p-3 rounded-full text-white">
+          <Icon name="ion:checkmark" size={20} />
+        </div>
+        <span class="font-semibold">Approval</span>
+      </div>
+      <Icon name="ion:arrow-forward" size={15} />
+      <div class="flex flex-col items-center">
+        <div>
+          <Icon name="home/mobile-website-with-character" size={80} />
+        </div>
+        <span class="font-semibold">Website</span>
+      </div>
+    </div>
+  </div>
+</section>

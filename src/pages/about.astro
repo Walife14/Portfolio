@@ -1,0 +1,49 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+
+// components
+import GetInTouch from "../components/get-in-touch.astro";
+---
+
+<Layout title="About | Lucas Fernandes Roncolato">
+  <div
+    class="px-4 flex flex-col gap-y-20 mb-20 md:px-20 lg:mb-40 lg:px-0 lg:w-8/12 lg:mx-auto"
+  >
+    <section class="flex flex-col gap-y-8 md:px-20">
+      <h1 class="text-3xl font-bold text-center">What is this all about?</h1>
+      <p class="text-dark-grey lg:text-center xl:w-4/6 xl:mx-auto">
+        Hello! I&apos;m Lucas, a web developer based between East London and
+        Essex. I&apos;m passionate about crafting bespoke website designs that
+        stand out from the crowd. Specializing in responsive and visually
+        striking websites, I use tools like Figma to turn your unique ideas into
+        engaging digital experiences. Whether you're a startup, a construction
+        company, or any other industry in between, I&apos;m here to collaborate
+        and bring your vision to life. Got a project in mind? Let&apos;s chat
+        and explore how we can make something amazing together!
+      </p>
+    </section>
+    <section class="grid grid-cols-1 lg:grid-cols-2">
+      <div class="flex justify-center">
+        <Icon name="about/character-with-task-steps" size={300} />
+      </div>
+      <div>
+        <h2 class="text-2xl font-bold mb-2">Simplicity.</h2>
+        <div class="flex flex-col gap-y-4">
+          <p class="text-dark-grey">
+            I like to keep things simple and straightforward when creating
+            websites. This approach ensures that your project is handled
+            efficiently, saving both time and effort.
+          </p>
+          <p class="text-dark-grey">
+            I keep you informed about every step of the project from start to
+            finish. When you choose me to bring your ideas to life, you can
+            expect compelling, dynamic, and user-friendly websites that truly
+            represent your vision.
+          </p>
+        </div>
+      </div>
+    </section>
+    <GetInTouch />
+  </div>
+</Layout>

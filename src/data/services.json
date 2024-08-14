@@ -1,0 +1,22 @@
+[
+    {
+        "icon": "ion:code-slash",
+        "name": "Custom Coding",
+        "content": "I make unique solutions from scratch, tailoring every detail to your needs. Experience custom-built websites and apps with exceptional precision and performance."
+    },
+    {
+        "icon": "ion:phone-portrait-outline",
+        "name": "Mobile Friendly",
+        "content": "I create unique, tailor-made solutions from scratch, ensuring your website or app is both functional and performant. Perfectly crafted to meet your specific needs."
+    },
+    {
+        "icon": "ion:happy-outline",
+        "name": "User Friendly",
+        "content": "I build unique solutions from scratch, tailored to fit your needs. Enjoy a website or app that’s designed just for you, with a focus on ease and performance."
+    },
+    {
+        "icon": "ion:search-outline",
+        "name": "SEO Optimized",
+        "content": "I craft bespoke coding solutions from scratch. Enhance your website or app with custom-built features designed to meet your unique needs and improve performance."
+    }
+]

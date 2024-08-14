@@ -1,0 +1,68 @@
+---
+import { Icon } from "astro-icon/components";
+
+import Layout from "../layouts/Layout.astro";
+
+// components
+import Services from "../components/index/services.astro";
+import Process from "../components/index/process.astro";
+import GetInTouch from "../components/get-in-touch.astro";
+---
+
+<Layout title="Home | Lucas Fernandes Roncolato">
+  <div class="relative h-[50dvh] flex items-center justify-center">
+    <!-- background blur effect -->
+    <div
+      class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary/60 h-2/3 w-2/6 rounded-full rotate-45 bg-blend-color blur-3xl"
+    >
+    </div>
+    <div
+      class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-black/25 h-1/2 w-2/6 rounded-full -rotate-45 bg-blend-color blur-3xl"
+    >
+      <!-- end of background blur effect -->
+    </div>
+    <Icon
+      id="glasses-frame"
+      class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-100"
+      name="home/glasses-one"
+      size={200}
+    />
+    <Icon
+      id="glasses-frame"
+      class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0"
+      name="home/glasses-two"
+      size={200}
+    />
+    <Icon
+      id="glasses-frame"
+      class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0"
+      name="home/glasses-three"
+      size={200}
+    />
+  </div>
+  <div class="flex flex-col gap-y-40 my-20 lg:my-40">
+    <Services />
+    <Process />
+    <GetInTouch />
+  </div>
+</Layout>
+
+<script>
+  let icons = document.querySelectorAll("#glasses-frame");
+  let currentIndex = 0;
+
+  function switchIcons() {
+    // Remove 'opacity-100' and add 'opacity-0' from the current active icon
+    icons[currentIndex].classList.remove("opacity-100");
+    icons[currentIndex].classList.add("opacity-0");
+
+    // Calculate the next index
+    currentIndex = (currentIndex + 1) % icons.length;
+
+    // Remove 'opacity-0' and add 'opacity-100' to the next icon
+    icons[currentIndex].classList.remove("opacity-0");
+    icons[currentIndex].classList.add("opacity-100");
+  }
+
+  setInterval(switchIcons, 200);
+</script>

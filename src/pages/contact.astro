@@ -1,0 +1,90 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<Layout title="Contact | Lucas Fernandes Roncolato">
+  <div
+    class="px-4 md:px-20 lg:px-0 lg:w-8/12 lg:mx-auto lg:grid lg:grid-cols-2 gap-8"
+  >
+    <div class="flex justify-center">
+      <Icon
+        class="lg:size-[450px]"
+        name="contact/character-with-contact-options"
+        size={300}
+      />
+    </div>
+    <div
+      class="flex items-center justify-end flex-col gap-y-1 lg:gap-y-10 lg:items-start"
+    >
+      <h1 class="text-3xl font-bold">Contact Form</h1>
+      <form
+        class="flex flex-col gap-y-2 w-full max-w-[450px] lg:gap-y-4"
+        action="https://api.web3forms.com/submit"
+        method="POST"
+      >
+        <input
+          type="hidden"
+          name="access_key"
+          value="fedb84a8-1d49-4a12-92a2-027fda7c2f3f"
+        />
+        <input
+          type="hidden"
+          name="redirect"
+          value="https://lucas-roncolato.com/email-received"
+        />
+        <label class="sr-only" for="name">First Name:</label>
+        <input
+          type="text"
+          placeholder="First Name..."
+          name="name"
+          id="name"
+          aria-label="First Name"
+          class="bg-gray-200 py-2 px-2 rounded-md placeholder:text-dark-grey"
+        />
+        <label class="sr-only" for="email">Email Address:</label>
+        <input
+          type="email"
+          placeholder="Email Address..."
+          name="email"
+          id="email"
+          aria-label="Email Address"
+          class="bg-gray-200 py-2 px-2 rounded-md placeholder:text-dark-grey"
+        />
+        <label class="sr-only" for="message">Message:</label>
+        <textarea
+          name="message"
+          placeholder="Message..."
+          id="message"
+          aria-label="Message"
+          class="bg-gray-200 py-2 px-2 rounded-md placeholder:text-dark-grey"
+        ></textarea>
+        <button
+          class="bg-primary py-2 text-white font-semibold"
+          type="submit"
+          aria-label="Send message">Send</button
+        >
+      </form>
+    </div>
+    <div class="my-10 col-start-2">
+      <h2 class="text-2xl font-bold mb-4">Alternative contact methods:</h2>
+      <div class="flex items-center gap-x-2 mb-4">
+        <Icon name="ion:call-outline" size={35} />
+        <a
+          class="font-semibold"
+          href="tel:07939478330"
+          aria-label="Phone number to get in touch">07939 478330</a
+        >
+      </div>
+      <div class="flex items-center gap-x-2">
+        <Icon name="ion:mail-outline" size={35} />
+        <a
+          class="font-semibold"
+          href="mailto:doublevisiondigialinfo@gmail.com"
+          aria-label="Email address to get in touch"
+          >doublevisiondigialinfo@gmail.com</a
+        >
+      </div>
+    </div>
+  </div>
+</Layout>

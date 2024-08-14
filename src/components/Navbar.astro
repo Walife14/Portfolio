@@ -1,0 +1,120 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<nav>
+  <div
+    class="flex justify-between items-center p-4 fixed w-full bg-white/95 z-50 md:px-20 lg:px-0 lg:w-8/12 lg:left-1/2 lg:-translate-x-1/2"
+    id="nav-container"
+  >
+    <a href="/" aria-label="Go to home page">
+      <Icon name="logos/logo-small" id="scroll-icon" size={35} />
+    </a>
+    <div class="flex items-center gap-3">
+      <button
+        class="cursor-pointer md:hidden size-[30px] overflow-hidden"
+        id="menu-btn"
+        aria-expanded="false"
+        aria-label="Open mobile nav"
+      >
+        <Icon
+          class="transition-transform duration-300"
+          name="ion:menu"
+          size={30}
+          id="icon-menu-open"
+        />
+        <Icon
+          class="transition-transform duration-300"
+          name="ion:close"
+          size={30}
+          id="icon-menu-close"
+        />
+      </button>
+      <ul
+        class="z-50 absolute top-full left-0 w-full p-4 flex flex-col items-center gap-3 transition-transform duration-500 -translate-x-full md:flex-row md:static md:translate-x-0 md:p-0"
+        id="menu"
+        role="navigation"
+      >
+        <li role="none" class="w-full flex justify-center md:w-auto">
+          <a class="w-full h-full p-3 text-center font-semibold" href="/">
+            Home
+          </a>
+        </li>
+        <li role="none" class="w-full flex justify-center md:w-auto">
+          <a class="w-full h-full p-3 text-center font-semibold" href="/about">
+            About
+          </a>
+        </li>
+        <li role="none" class="w-full flex justify-center md:w-auto">
+          <a
+            class="w-full h-full p-3 text-center bg-primary text-white font-semibold"
+            href="/contact"
+          >
+            Contact Me
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // size of icon 1.5x when at top of scroll
+
+  function handleScroll() {
+    const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+    const icon = document.getElementById("scroll-icon");
+    const navContainer = document.getElementById("nav-container");
+
+    if (scrollPosition > 0) {
+      icon.classList.remove("w-[70px]");
+      icon.classList.add("w-[35px]");
+      navContainer.classList.add("bg-white/95");
+    } else {
+      icon.classList.add("w-[70px]");
+      icon.classList.remove("w-[35px]");
+      navContainer.classList.remove("bg-white/95");
+    }
+  }
+  // Run on page load
+  window.addEventListener("load", handleScroll);
+  // Run on scroll
+  window.addEventListener("scroll", handleScroll);
+
+  // navbar menu collapse and uncollapse
+  document.addEventListener("DOMContentLoaded", () => {
+    const navBtn = document.querySelector("#menu-btn");
+    const navMenu = document.querySelector("#menu");
+
+    navBtn.addEventListener("click", () => {
+      // Toggle the aria-expanded attribute
+      const isExpanded = navBtn.getAttribute("aria-expanded") === "true";
+      navBtn.setAttribute("aria-expanded", !isExpanded ? "true" : "false");
+      // update the aria-label based on collapsed state of nav
+      navBtn.setAttribute(
+        "aria-label",
+        !isExpanded ? "Close mobile nav" : "Open mobile nav"
+      );
+      // if aria-expanded true then make close btn appear
+      const closeBtn = document.querySelector("#icon-menu-close");
+      const openBtn = document.querySelector("#icon-menu-open");
+      if (isExpanded) {
+        closeBtn.classList.remove("-translate-y-full");
+        openBtn.classList.remove("-translate-y-full");
+        // Toggle the menu visibility based on aria-expanded
+        // If menu was expanded, it should collapse
+        navMenu.classList.remove("translate-x-0");
+        navMenu.classList.add("-translate-x-full");
+        navMenu.classList.remove("bg-white/95");
+      } else {
+        openBtn.classList.add("-translate-y-full");
+        closeBtn.classList.add("-translate-y-full");
+        // Toggle the menu visibility based on aria-expanded
+        // If menu was collapsed, it should expand
+        navMenu.classList.remove("-translate-x-full");
+        navMenu.classList.add("translate-x-0");
+        navMenu.classList.add("bg-white/95");
+      }
+    });
+  });
+</script>
