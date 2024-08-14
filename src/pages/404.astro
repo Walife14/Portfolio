@@ -1,0 +1,20 @@
+---
+import { Icon } from "astro-icon/components";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Page Not Found">
+  <div class="px-4 md:px-20 lg:px-0 lg:w-8/12 lg:mx-auto">
+    <div class="flex justify-center">
+      <Icon name="404/monster-artist" size={300} />
+    </div>
+    <div class="flex flex-col gap-y-4 lg:text-center">
+      <h1 class="font-bold text-3xl">Oops! Page Not Found</h1>
+      <p class="text-dark-grey">
+        It looks like the page you&apos;re looking for doesn&apos;t exist. But
+        don&apos;t worry, you can easily find your way back home.
+      </p>
+      <a class="text-blue-500 underline" href="/">Return to Home</a>
+    </div>
+  </div>
+</Layout>
